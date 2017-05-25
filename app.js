@@ -47,8 +47,8 @@ app.use(function(err, req, res, next) {
 // http.createServer(function(request, response){
 //   console.log('Running...');
 // }).listen(80);
-
-http.createServer(app).listen(80, function(){
+app.set('port', (process.env.PORT || 80));
+app.listen(app.get('port'), function(){
   console.log('Running Random Generator...');
 });
 
