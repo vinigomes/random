@@ -1,16 +1,15 @@
 var url = require('url');
 var express = require('express');
 var router = express.Router();
+var RandomNumGenerator = require('../app/RandomicNumGenerator');
 
 /* GET random number. */
 router.get('/numeric', function(req, res, next) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    var params = url.parse(req.url, true).query;
-    var input = params.number;
-    var numInput = new Number(input);
-    var numOutput = new Number(Math.random() * numInput).toFixed(0);
-    res.write(numOutput);
-    res.end();
+    let params = url.parse(req.url, true).query;
+    let input = params.number;
+    let randomNumGenerator = new RandomNumGenerator(Number(input));
+    let generatedNumber = randomNumGenerator.generate();
+    res.status(200).send(generatedNumber);
 });
 
 /* GET random string. */
