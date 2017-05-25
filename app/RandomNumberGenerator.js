@@ -1,6 +1,6 @@
 'use strict';
 
-class NumberRandomGenerator {
+class RandomNumberGenerator {
 
     constructor(number) {
         this._limitNumber = number;
@@ -19,4 +19,4 @@ class NumberRandomGenerator {
     }
 }
 
-module.exports = NumberRandomGenerator;
+module.exports = RandomNumberGenerator;

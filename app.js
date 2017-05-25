@@ -49,7 +49,7 @@ app.use(function(err, req, res, next) {
 // }).listen(80);
 app.set('port', (process.env.PORT || 80));
 app.listen(app.get('port'), function(){
-  console.log('Running Random Generator...');
+  console.log('Running Random Generator...at port[' + app.get('port') + ']');
 });
 
 module.exports = app;
